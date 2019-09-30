@@ -1,0 +1,39 @@
+# config
+config
+webpack.config.js
+prettier.config.js
+webpack.config.js
+
+# Babel
+babel.config.js
+
+# Storybook
+storybook-static
+**/*.story.js
+*.story.js
+.storybook
+
+# Jest
+src/__tests__
+src/__fixtures__
+__mocks__
+__tests__
+__fixtures__
+**/*.test.js
+**/*.spec.js
+jest.config.js
+
+# build
+build
+dist
+
+# Others
+.git
+.cache
+
+*.bundle.js
+*.js.map
+.history
+!/src/pages/dashboard/
+webpack
+mock-server
