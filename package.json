@@ -12,7 +12,7 @@
     "mock:dev": "yarn run mock",
     "build": "rimraf dist && cross-env NODE_ENV=production webpack",
     "build:dev": "rimraf dist && cross-env NODE_ENV=development webpack",
-    "build:prod": "yarn run build",
+    "build:prod": "yarn run build && nodemon server.js",
     "test": "yarn run test:jest && npm run test:eslint",
     "test:jest": "jest ./src --coverage",
     "test:jest:watch": "yarn run test:jest -- --watch",

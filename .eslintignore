@@ -37,3 +37,4 @@ dist
 !/src/pages/dashboard/
 webpack
 mock-server
+server.js
