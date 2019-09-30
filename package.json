@@ -18,6 +18,10 @@
     "test:jest:watch": "yarn run test:jest -- --watch",
     "test:eslint": "eslint ./src"
   },
+  "engines": {
+    "npm": "6.11.3",
+    "node": "12.11.0"
+  },
   "devDependencies": {
     "@babel/cli": "7.6.2",
     "@babel/core": "7.6.2",
