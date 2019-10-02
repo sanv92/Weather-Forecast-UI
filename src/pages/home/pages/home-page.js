@@ -58,32 +58,28 @@ const HomeView = ({ forecasts }) => (
       </Table.Header>
 
       <Table.Body>
-        {forecasts.map((forecast) => {
-          const [year, month, day] = forecast.date
-
-          return (
-            <Table.Row key={forecast.forecastId}>
-              <Table.Cell width={2}>
-                {`${year}-${month}-${day}`}
-              </Table.Cell>
-              <Table.Cell width={1} textAlign="center">
-                <IconDay
-                  name={forecast.timeOfDayType.value}
-                />
-              </Table.Cell>
-              <Table.Cell width={3}>
-                {forecast.description}
-              </Table.Cell>
-              <Table.Cell width={1} textAlign="center">
-                <NavLink to={`/forecasts/${forecast.uuid}`}>
-                  <Button primary>
-                    More details
-                  </Button>
-                </NavLink>
-              </Table.Cell>
-            </Table.Row>
-          )
-        })}
+        {forecasts.map((forecast) => (
+          <Table.Row key={forecast.forecastId}>
+            <Table.Cell width={2}>
+              {forecast.date}
+            </Table.Cell>
+            <Table.Cell width={1} textAlign="center">
+              <IconDay
+                name={forecast.timeOfDay.name}
+              />
+            </Table.Cell>
+            <Table.Cell width={3}>
+              {forecast.description}
+            </Table.Cell>
+            <Table.Cell width={1} textAlign="center">
+              <NavLink to={`/forecasts/${forecast.uuid}`}>
+                <Button primary>
+                  More details
+                </Button>
+              </NavLink>
+            </Table.Cell>
+          </Table.Row>
+        ))}
       </Table.Body>
     </Table>
   </HomeContentTemplate>

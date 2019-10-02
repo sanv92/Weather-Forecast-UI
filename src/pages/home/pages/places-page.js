@@ -21,8 +21,7 @@ const enhance = compose(
 )
 
 const PlacesView = (properties) => {
-  const { forecast: { date, timeOfDayType, description, places } } = properties
-  const [year, month, day] = date
+  const { forecast: { date, timeOfDay, description, places } } = properties
   const isForecast = places.length <= 0
 
   return (
@@ -30,8 +29,8 @@ const PlacesView = (properties) => {
       <Grid columns='three' divided>
         <Grid.Row>
           <Grid.Column width={4} textAlign="center">
-            <Header as="h1">{timeOfDayType.name} - {year}-{month}-{day}</Header>
-            <IconDay name={timeOfDayType.value} size="massive" />
+            <Header as="h1">{timeOfDay.name} - {date.date}</Header>
+            <IconDay name={timeOfDay.name} size="massive" />
             <Divider />
             <p>
               {description}
@@ -49,12 +48,12 @@ const PlacesView = (properties) => {
 
               <Table.Body>
                 {places.map((forecast) => {
-                  const { placeType, prediction: { temperature } } = forecast
+                  const { uuid, type, prediction: { temperature } } = forecast
 
                   return (
-                    <Table.Row key={forecast.forecastId}>
+                    <Table.Row key={uuid}>
                       <Table.Cell width={2}>
-                        {placeType.name}
+                        {type.value}
                       </Table.Cell>
                       <Table.Cell width={1} textAlign="center">
                         {temperature.min} .. {temperature.max}
