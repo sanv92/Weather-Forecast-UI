@@ -59,7 +59,7 @@ const PlacesView = (properties) => {
                         {temperature.min} .. {temperature.max}
                       </Table.Cell>
                       <Table.Cell width={3}>
-                        {temperature.phenomenon.name}
+                        {temperature.phenomenon.value}
                       </Table.Cell>
                     </Table.Row>
                   )
